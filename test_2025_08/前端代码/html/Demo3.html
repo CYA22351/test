@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单练习</title>
+</head>
+
+<body>
+    <form action="Demo2.html" method="get">
+        用户名：<input type="text" name="username" id="" size="30"><br>
+        密码：<input type="password" size="30" name="password"><br>
+        <!-- 单选框radio -->
+        <!-- name给后端传参 -->
+        性别：<input type="radio" name="gender" id="gender1" value="1"> <label for="gender1">男</label>
+        <input type="radio" name="gender" id="gender2" value="2"> <label for="gender2">女</label>
+        <input type="radio" name="gender" id="gender3" value="0"> <label for="gender3">保密</label><br>
+        <!-- 复选框checkbox -->
+        兴趣：<input type="checkbox" name="hobby" id="" value="1">篮球
+        <input type="checkbox" name="hobby" id="" value="2">足球
+        <input type="checkbox" name="hobby" id="" value="3">乒乓球<br>
+        <!-- <input type="checkbox" name="" id="">台球<br>
+        <input type="button" name="" id="" value="按钮"> -->
+        <select name="" id="">
+            <option value="1">计算机技术与科学</option>
+            <!-- selected默认选项 -->
+            <option value="2" selected>软件工程</option>
+            <option value="3">物联网</option>
+
+
+        </select><br>
+        <!-- 文本域 -->
+        个人描述：<textarea name="" id="" rows="10" cols="50"></textarea>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

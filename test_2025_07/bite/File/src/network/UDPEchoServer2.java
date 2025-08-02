@@ -29,6 +29,7 @@ public class UDPEchoServer2 {
             DatagramPacket responsePacket=new DatagramPacket(response.getBytes(),response.getBytes().length,requestPacket.getSocketAddress());
             socket.send(responsePacket);
             System.out.println();
+
             System.out.printf("[%s:%d] req: %s,resp: %s\n",requestPacket.getAddress().toString(),requestPacket.getPort(),request,response);
         }
     }
