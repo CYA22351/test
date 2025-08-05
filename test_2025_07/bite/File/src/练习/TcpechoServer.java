@@ -52,6 +52,7 @@ while (true){
                 System.out.printf("[%s:%d] req:%s,req:%s\n",clientSocket.getInetAddress(),clientSocket.getPort(),request,response);
             }
         }
+        clientSocket.close();
     }
     private String process(String request){
         return request;
