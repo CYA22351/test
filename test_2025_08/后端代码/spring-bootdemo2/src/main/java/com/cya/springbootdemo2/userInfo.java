@@ -15,6 +15,7 @@ public class userInfo {
     public userInfo() {
     }
 
+
     public userInfo(String name, int gender, int age) {
         this.name = name;
         this.gender = gender;
