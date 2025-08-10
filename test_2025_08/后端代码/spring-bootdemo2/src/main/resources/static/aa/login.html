@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>登录页面</title>
+</head>
+
+<body>
+  <h1>用户登录</h1>
+  用户名：<input name="userName" type="text" id="userName"><br>
+  密码：<input name="password" type="password" id="password"><br>
+  <input type="button" value="登录" onclick="login()">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script>
+    function login() {
+    $.ajax({
+      //对象
+      type:"post",//请i求放肆
+      url:"/user/login",//请求路径
+      //请求的参数
+      data:{
+        //javascript
+        userName:$("#userName").val(),//取input的值
+        password:$("#password").val()
+      },
+      //后端返回结果boolean
+      success:function (result){
+        if (result){
+          //密码正确，跳转页面
+          location.href="index.html";
+        //  location.assign("index.html");
+        }else {
+          //密码错误
+          alert("密码错误，请确认");
+        }
+      }
+    });
+    }
+
+  </script>
+</body>
+
+</html>

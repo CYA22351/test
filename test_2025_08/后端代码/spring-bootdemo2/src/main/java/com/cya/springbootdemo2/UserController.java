@@ -34,4 +34,8 @@ public class UserController {
     public String m5(){
         return "m5";
     }
+    public void testLombok(){
+        MessageInfo messageInfo=new MessageInfo();
+        messageInfo.setMessage(" ");
+    }
 }
