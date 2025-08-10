@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10df97b0-710f-4219-99b3-013598eea818" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/MessageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/sumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/aa/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/aa/jquery-3.7.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -179,6 +173,7 @@
       <workItem from="1754704555222" duration="14991000" />
       <workItem from="1754789448104" duration="2144000" />
       <workItem from="1754796231180" duration="16052000" />
+      <workItem from="1754837609337" duration="2392000" />
     </task>
     <servers />
   </component>
