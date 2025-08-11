@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10df97b0-710f-4219-99b3-013598eea818" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/messagewall.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa/jquery-3.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jquery-3.7.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/MessageInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/MessageInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/aa/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/aa/jquery-3.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/aa/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,34 +50,38 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JsonTest.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.JsonTest.executor": "Run",
-    "JUnit.JsonTest.testJson.executor": "Run",
-    "JUnit.JsonTest.testJsontoObject.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.SpringBootdemo2Application.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/java/code/test_java/test_2025_08/后端代码/spring-bootdemo2/src/main/resources/static/aa",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JsonTest.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.JsonTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JsonTest.testJson.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JsonTest.testJsontoObject.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SpringBootdemo2Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/code/test_java/test_2025_08/后端代码/spring-bootdemo2/src/main/resources/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\code\test_java\test_2025_08\后端代码\spring-bootdemo2\src\main\resources\static" />
       <recent name="D:\java\code\test_java\test_2025_08\后端代码\spring-bootdemo2\src\main\resources\static\aa" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\code\test_java\test_2025_08\后端代码\spring-bootdemo2\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringBootdemo2Application">
@@ -174,6 +187,8 @@
       <workItem from="1754789448104" duration="2144000" />
       <workItem from="1754796231180" duration="16052000" />
       <workItem from="1754837609337" duration="2392000" />
+      <workItem from="1754877431648" duration="14258000" />
+      <workItem from="1754921866434" duration="724000" />
     </task>
     <servers />
   </component>
