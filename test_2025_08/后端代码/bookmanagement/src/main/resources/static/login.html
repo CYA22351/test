@@ -33,7 +33,25 @@
     <script src="js/jquery.min.js"></script>
     <script>
         function login() {
-            location.href = "book_list.html";
+            $.ajax({
+                type:"post",
+                url:"/user/login",
+                data:{
+                    username:$("#userName").val(),
+                    password:$("#password").val()
+                },
+                success:function (result){
+                    if (result){
+                        //账号密码正确
+                         location.href = "book_list.html";
+                    }
+                    else {
+                        alert("账号或密码错误!")
+                    }
+                }
+            })
+
+
         }
     </script>
 </body>
