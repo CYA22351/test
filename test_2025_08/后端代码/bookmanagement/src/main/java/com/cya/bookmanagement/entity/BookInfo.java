@@ -1,4 +1,4 @@
-package com.cya.bookmanagement;
+package com.cya.bookmanagement.entity;
 
 import lombok.Data;
 

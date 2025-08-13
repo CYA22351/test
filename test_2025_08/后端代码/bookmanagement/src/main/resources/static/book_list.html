@@ -119,22 +119,20 @@
                         var fianalHtml="";
                         for (var book of books){
                             fianalHtml+='<tr>';
-                            fianalHtml+='<td><input type="checkbox" name="selectBook" value="1" id="selectBook" class="book-select"></td>';
-                            fianalHtml+='<td>4</td>';
-                            fianalHtml+='<td>大秦帝国第四册</td>';
-                            fianalHtml+='<td>我是作者</td>';
-                            fianalHtml+='<td>23</td>';
-                            fianalHtml+='<td>33.00</td>';
-                            fianalHtml+='<td>北京出版社</td>';
-                            fianalHtml+='<td>可借阅</td>';
+                            fianalHtml+='<td><input type="checkbox" name="selectBook" value="'+book.bookId+'" id="selectBook" class="book-select"></td>';
+                            fianalHtml+='<td>'+book.bookId+'</td>';
+                            fianalHtml+='<td>'+book.bookName+'</td>';
+                            fianalHtml+='<td>'+book.author+'</td>';
+                            fianalHtml+='<td>'+book.num+'</td>';
+                            fianalHtml+='<td>'+book.price+'</td>';
+                            fianalHtml+='<td>'+book.publish+'</td>';
+                            fianalHtml+='<td>'+book.statuscn+'</td>';
                             fianalHtml+='<td><div class="op">';
-                            fianalHtml+='<a href="book_update.html?bookId=4">修改</a>';
-                            fianalHtml+='<a href="javascript:void(0)" onclick="deleteBook(4)">删除</a>';
+                            fianalHtml+='<a href="book_update.html?bookId='+book.bookId+'">修改</a>';
+                            fianalHtml+='<a href="javascript:void(0)" onclick="deleteBook('+book.bookId+')">删除</a>';
                             fianalHtml+='</div>';
                             fianalHtml+='</td>';
                             fianalHtml+='</tr>';
-
-
                         }
 
                         $("tbody").html(fianalHtml)

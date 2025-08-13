@@ -1,7 +1,6 @@
-package com.cya.bookmanagement;
+package com.cya.bookmanagement.Dao;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.cya.bookmanagement.entity.BookInfo;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,33 +9,16 @@ import java.util.Random;
 
 /**
  * @author ：陈奕安（3048279304@qq.com）
- * @date ：Created in 2025/8/12 12:06
+ * @date ：Created in 2025/8/13 16:14
  * @description：
  * @modified By：
  * @version:
  */
-@RequestMapping("/book")
-@RestController
-public class BookController {
-    @RequestMapping("getList")
-    public List<BookInfo> getList(){
-        List<BookInfo> list=mockData();
-        //对数据二次处理
-        for (BookInfo bookInfo:list){
-            if (bookInfo.getStatus()==1){
-                bookInfo.setStatuscn("可借阅");
-            }
-            else {
-                bookInfo.setStatuscn("不可借阅");
-            }
-
-        }
-        return list;
-    }
+public class BookDao {
     //假数据
     public List<BookInfo> mockData(){
         List<BookInfo> bookInfos=new ArrayList<>();
-        for (int i=0;i<15;i++){
+        for (int i=1;i<=15;i++){
             BookInfo bookInfo=new BookInfo();
             bookInfo.setBookId(i);
             bookInfo.setBookName("图书"+i);
