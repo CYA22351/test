@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version:
  */
 @RequestMapping("/user")
-@RestController
+@RestController//生成UserController对象并调用
 public class UserController {
     @RequestMapping("login")
     public Boolean login(String username, String password, HttpSession session){

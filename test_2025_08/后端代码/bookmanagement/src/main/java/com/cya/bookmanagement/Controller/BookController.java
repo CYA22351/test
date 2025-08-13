@@ -2,6 +2,7 @@ package com.cya.bookmanagement.Controller;
 
 import com.cya.bookmanagement.entity.BookInfo;
 import com.cya.bookmanagement.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +21,11 @@ import java.util.Random;
 @RequestMapping("/book")
 @RestController
 public class BookController {
+    @Autowired//从spring容器中获取对象并赋值
+    private BookService bookService;
     @RequestMapping("getList")
 public List<BookInfo> getList(){
-        BookService bookService=new BookService();
+
         return bookService.getList();
     }
 

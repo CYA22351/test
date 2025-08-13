@@ -67,7 +67,7 @@ public class RequestController {
     }
     //传递json
     @RequestMapping("r9")
-
+//@RequestBody，接受json类型的参数
     public String r9(@RequestBody userInfo userInfo){
         return userInfo.toString();
     }

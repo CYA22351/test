@@ -2,6 +2,9 @@ package com.cya.bookmanagement.service;
 
 import com.cya.bookmanagement.Dao.BookDao;
 import com.cya.bookmanagement.entity.BookInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -12,9 +15,12 @@ import java.util.List;
  * @modified By：
  * @version:
  */
+@Component
 public class BookService {
+    @Autowired
+    private BookDao bookDao;
     public List<BookInfo> getList(){
-        BookDao bookDao=new BookDao();
+
         List<BookInfo> list=bookDao.mockData();
         //对数据二次处理
         for (BookInfo bookInfo:list){
