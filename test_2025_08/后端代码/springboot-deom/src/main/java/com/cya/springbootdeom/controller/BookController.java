@@ -20,6 +20,7 @@ import java.util.List;
 public class BookController {
     @Autowired
     private BookService bookService;
+    @RequestMapping("getList")
     public List<BookInfo> getList(){
         return bookService.getList();
     }

@@ -37,10 +37,14 @@ public class SpingIocDemoApplication {
 //		bean3.print();
 
 		//Bean
-		Student bean = (Student) context.getBean("s2");
-		System.out.println(bean);
+//		Student bean = (Student) context.getBean("s2");
+//		System.out.println(bean);
 
-
+		//DI注入
+//		HelloController bean = context.getBean(HelloController.class);
+//		bean.print();
+		UserService bean = context.getBean(UserService.class);
+		bean.print();
 
 	}
 

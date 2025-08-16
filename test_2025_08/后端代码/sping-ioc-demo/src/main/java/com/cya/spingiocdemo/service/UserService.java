@@ -1,5 +1,7 @@
 package com.cya.spingiocdemo.service;
 
+import com.cya.spingiocdemo.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +13,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService {
+   @Autowired
+    public Student s1;
+
     public void print(){
         System.out.println("do service");
+        System.out.println(s1);
     }
 }
