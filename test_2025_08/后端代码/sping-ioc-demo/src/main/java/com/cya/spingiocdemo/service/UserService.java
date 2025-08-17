@@ -1,7 +1,9 @@
 package com.cya.spingiocdemo.service;
 
 import com.cya.spingiocdemo.model.Student;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +15,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService {
+    @Qualifier("s2")
    @Autowired
+//    @Resource(name = "s2")
     public Student s1;
 
     public void print(){

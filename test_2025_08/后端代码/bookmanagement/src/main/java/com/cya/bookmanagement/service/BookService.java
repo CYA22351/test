@@ -4,6 +4,7 @@ import com.cya.bookmanagement.Dao.BookDao;
 import com.cya.bookmanagement.entity.BookInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * @modified By：
  * @version:
  */
-@Component
+@Service
 public class BookService {
     @Autowired
     private BookDao bookDao;

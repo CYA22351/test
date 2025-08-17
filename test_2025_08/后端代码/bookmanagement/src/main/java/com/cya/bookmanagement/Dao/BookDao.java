@@ -2,6 +2,7 @@ package com.cya.bookmanagement.Dao;
 
 import com.cya.bookmanagement.entity.BookInfo;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.Random;
  * @modified By：
  * @version:
  */
-@Component//sring生成BookDao对象放入容器
+@Repository//sring生成BookDao对象放入容器
 public class BookDao {
     //假数据
     public List<BookInfo> mockData(){

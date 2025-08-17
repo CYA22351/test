@@ -43,8 +43,8 @@ public class SpingIocDemoApplication {
 		//DI注入
 //		HelloController bean = context.getBean(HelloController.class);
 //		bean.print();
-		UserService bean = context.getBean(UserService.class);
-		bean.print();
+//		UserService bean = context.getBean(UserService.class);
+//		bean.print();
 
 	}
 

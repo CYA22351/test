@@ -1,0 +1,31 @@
+#server:
+#  port: 9091
+#my:
+#  key1: 10
+#  key2: 20
+
+# url: jdbc:mysql://127.0.0.0:3306/dbname?characterEncoding=utf8&useSSL=false
+#  characterEncoding=utf8&useSSL=false
+#  spring.datasource.username=root
+#  spring.datasource.password=root
+#一级key
+mykey: value
+#多级
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testdb?
+    username: root
+    password: root
+#自定义key
+my:
+  key3: hello
+  key4: 5
+person:
+  id: 1
+  name: java117
+  age: 18
+dbtypes:
+  name:
+    - mysql
+    - sqlserver
+    - db2
