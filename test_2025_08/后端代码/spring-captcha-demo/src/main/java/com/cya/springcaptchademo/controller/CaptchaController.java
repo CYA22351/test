@@ -31,6 +31,7 @@ public class CaptchaController {
 
     @RequestMapping("/getCaptcha")
     public void getCaptcha(HttpServletResponse response, HttpSession session) throws IOException {
+        long start=System.currentTimeMillis();
 
         response.setContentType("image/jpeg");//设置编码
         response.setHeader("Pragma","No-cahce");
@@ -45,6 +46,8 @@ public class CaptchaController {
         captcha.write(response.getOutputStream());
         //关闭response
         response.getOutputStream().close();
+        long end=System.currentTimeMillis();
+        System.out.println("cost Time"+(end-start)+"ms");
 
     }
     @RequestMapping("/check")
