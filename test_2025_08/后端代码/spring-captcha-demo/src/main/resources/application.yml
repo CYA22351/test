@@ -2,7 +2,7 @@ spring:
   application:
   name: spring-captcha-demo
 captcha:
-  width: 100
+  width: 150
   heigh: 50
   session:
     key: CAPTCHA_SESSION_KEY

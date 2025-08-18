@@ -32,11 +32,16 @@ public class CaptchaController {
     @RequestMapping("/getCaptcha")
     public void getCaptcha(HttpServletResponse response, HttpSession session) throws IOException {
 
+        response.setContentType("image/jpeg");//设置编码
+        response.setHeader("Pragma","No-cahce");
+
         //定义图形验证码的长、宽、验证码字符数、干扰线宽度
         ShearCaptcha captcha = CaptchaUtil.createShearCaptcha(captchaP.getWidth(), captchaP.getHeigh(), 4, 4);
         String code=captcha.getCode();
+        //http是无状态的不记录信息，用session来记录生成验证码
         session.setAttribute(captchaP.getSession().getKey(),code);
-        session.setAttribute(captchaP.getSession().getDate(),new Date());
+        session.setAttribute(captchaP.getSession().getDate(),new Date());//验证码生成时间，用来判断是否超时
+        //输出流，直接输出到浏览器
         captcha.write(response.getOutputStream());
         //关闭response
         response.getOutputStream().close();
@@ -49,7 +54,7 @@ public class CaptchaController {
             }
             String code=(String) session.getAttribute(captchaP.getSession().getKey());
             Date date=(Date) session.getAttribute(captchaP.getSession().getDate());
-            if (captcha.equalsIgnoreCase(code)&&System.currentTimeMillis()-date.getTime()<vALID_TIME){
+            if (captcha.equalsIgnoreCase(code) &&date!=null &&  System.currentTimeMillis()-date.getTime()<vALID_TIME){
                 return true;
 
             }
