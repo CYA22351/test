@@ -1,0 +1,7 @@
+spring:
+  application:
+  name: spring-log-demo
+logging:
+  level:
+    root: trace
+
