@@ -3,5 +3,10 @@ spring:
   name: spring-log-demo
 logging:
   level:
-    root: trace
-
+    root: info
+    com:
+      cya:
+        springlogdemo:
+          controller: trace
+  file:
+    name: log/log.log

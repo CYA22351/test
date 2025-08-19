@@ -1,0 +1,11 @@
+2025-08-19T18:43:09.804+08:00  INFO 13404 --- [main] c.c.s.SpringLogDemoApplication           : Starting SpringLogDemoApplication using Java 21.0.2 with PID 13404 (D:\java\code\test_java\test_2025_08\后端代码\spring-log-demo\target\classes started by 陈奕安 in D:\java\code\test_java\test_2025_08\后端代码\spring-log-demo)
+2025-08-19T18:43:09.805+08:00  INFO 13404 --- [main] c.c.s.SpringLogDemoApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-08-19T18:43:10.250+08:00  INFO 13404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-19T18:43:10.260+08:00  INFO 13404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-19T18:43:10.261+08:00  INFO 13404 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-19T18:43:10.289+08:00  INFO 13404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-19T18:43:10.289+08:00  INFO 13404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 459 ms
+2025-08-19T18:43:10.508+08:00  INFO 13404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-19T18:43:10.513+08:00  INFO 13404 --- [main] c.c.s.SpringLogDemoApplication           : Started SpringLogDemoApplication in 1.006 seconds (process running for 1.34)
+2025-08-19T18:52:35.047+08:00  INFO 13404 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-19T18:52:35.052+08:00  INFO 13404 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
