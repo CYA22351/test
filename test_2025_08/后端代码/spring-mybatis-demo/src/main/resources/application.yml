@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-mybatis-demo
+#    数据库配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatis_test?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true # 这里每个设置之后使用 &
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
