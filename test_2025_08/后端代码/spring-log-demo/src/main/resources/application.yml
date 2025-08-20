@@ -8,5 +8,12 @@ logging:
       cya:
         springlogdemo:
           controller: trace
+          service: error
+
   file:
     name: log/log.log
+#    path: logger/log.log
+  logback:
+    rollingpolicy:
+      max-file-size: 1KB
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i
