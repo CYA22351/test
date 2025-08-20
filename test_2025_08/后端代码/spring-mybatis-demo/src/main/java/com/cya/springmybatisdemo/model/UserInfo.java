@@ -19,7 +19,7 @@ public class UserInfo {
     private Integer age;
     private Integer gender;
     private String phone;
-    private Integer deleteFlag;
+    private Integer deleteFlag;//小驼峰
     private Date createTime;
     private Date updateTime;
 }
