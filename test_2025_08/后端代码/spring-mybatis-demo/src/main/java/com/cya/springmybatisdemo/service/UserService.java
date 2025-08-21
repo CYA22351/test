@@ -22,4 +22,8 @@ public class UserService {
     public List<UserInfo> getAllUser() {
         return userInfoMapper.selectALL();
     }
+
+    public UserInfo getUserInfoById(Integer id) {
+        return userInfoMapper.selectAllById(id);
+    }
 }

@@ -21,8 +21,14 @@ public class UserInfoController {
 
     @Autowired
     private UserService service;
+
     @RequestMapping("/getAllUser")
     public List<UserInfo> getAllUser(){
         return service.getAllUser();
+    }
+
+    @RequestMapping("/getUserInfoById")
+    public UserInfo getUserInfoById(Integer id){
+        return service.getUserInfoById(id);
     }
 }
