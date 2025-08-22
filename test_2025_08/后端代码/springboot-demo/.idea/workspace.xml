@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d67333ad-04c3-4e81-a810-bbe0c41dad71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring-bootdemo2/src/main/java/com/cya/springbootdemo2/sumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-bootdemo2/src/main/resources/static/sum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-bootdemo2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-bootdemo2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +94,7 @@
       <workItem from="1754491187949" duration="2475000" />
       <workItem from="1754527935377" duration="9362000" />
       <workItem from="1754796219275" duration="11000" />
+      <workItem from="1755849041412" duration="13000" />
     </task>
     <servers />
   </component>

@@ -42,10 +42,11 @@ class UserInfoMapperTest {
     @Test
     void insertUser() {
         UserInfo userInfo=new UserInfo();
-        userInfo.setUsername("chenyian");
-        userInfo.setPassword("chenyian");
+        userInfo.setUsername("chenyian3");
+        userInfo.setPassword("chenyian3");
         userInfo.setAge(22);
         Integer result=userInfoMapper.insertUser(userInfo);
-        System.out.println("影响行数："+result);
+        System.out.println("影响行数："+result+".id:"+userInfo.getId());
+
     }
 }

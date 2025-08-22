@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10df97b0-710f-4219-99b3-013598eea818" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/java/com/cya/springbootdeom/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/java/com/cya/springbootdeom/controller/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/java/com/cya/springbootdeom/entiy/BookInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/java/com/cya/springbootdeom/entiy/MessageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/book_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/book_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/book_update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/add.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/jquery.bs_pagination.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/jquery-3.7.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/js/highlight.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/js/jq-paginator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/js/jqPaginator.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/login1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/messagewall.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springboot-deom/src/main/resources/static/pic/computer.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +185,7 @@
       <workItem from="1755087686842" duration="941000" />
       <workItem from="1755088807493" duration="2307000" />
       <workItem from="1755230464845" duration="10240000" />
+      <workItem from="1755848688210" duration="349000" />
     </task>
     <servers />
   </component>

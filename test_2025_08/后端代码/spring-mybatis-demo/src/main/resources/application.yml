@@ -10,3 +10,4 @@ spring:
 mybatis:
   configuration: # 配置打印 MyBatis⽇志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #配置驼峰⾃动转换
