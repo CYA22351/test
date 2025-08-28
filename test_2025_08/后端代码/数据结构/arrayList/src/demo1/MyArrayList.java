@@ -51,6 +51,7 @@ public void checkInsertPos(int pos){
         }
 }
 
+//根据下标插入元素
     @Override
     public void add(int pos, int data) {
         if (isFull()){
@@ -75,12 +76,13 @@ public void checkInsertPos(int pos){
         }
         return false;
     }
+
     //判断顺序表书是否为空
     public boolean isEmputy(){
         return usedSize==0;
     }
 
-    //
+    //查找元素的下标
     @Override
     public int indexOf(int toFind) {
         for (int i=0;i<usedSize;i++){
@@ -120,6 +122,7 @@ public void checkInsertPos(int pos){
         array[pos]=value;
     }
 
+    //删除顺序表元素
     @Override
     public void remove(int toRemove) {
         int index=indexOf(toRemove);
