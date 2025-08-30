@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cya.springmybatisdemo.mapper.UserInfoMapperXML">
+
+<resultMap id="BaseMap" type="com.cya.springmybatisdemo.model.UserInfo">
+     <id property="id" column="id"></id>
+    <result property="deleteFlag" column="delete_flag"></result>
+    <result property="createTime" column="create_time"></result>
+    <result property="updateTime" column="update_time"></result>
+
+</resultMap>
+    <update id="updateUser">
+    update user_info set password=#{password},age=#{age} where id=#{id}
+    </update>
+    <delete id="deleteUser">
+            delete from user_info where id=#{id}
+    </delete>
+
+
+    <select id="selectAll" resultType="com.cya.springmybatisdemo.model.UserInfo">
+        select id, username, `password`, age, gender, phone, delete_flag as
+            deleteFlag,create_time as createTime, update_time as updateTime from user_info
+--         select * from user_info
+    </select>
+    <select id="selectAll2" resultMap="BaseMap">
+        select * from user_info
+
+    </select>
+
+    <insert id="insertUser">
+        insert into user_info(username,password,age) values (#{username},#{password},#{age})
+    </insert>
+
+    <insert id="insertUser2" useGeneratedKeys="true" keyProperty="id">
+
+        insert into user_info(username,password,age) values (#{userinfo.username},#{userinfo.password},#{userinfo.age})
+    </insert>
+</mapper>

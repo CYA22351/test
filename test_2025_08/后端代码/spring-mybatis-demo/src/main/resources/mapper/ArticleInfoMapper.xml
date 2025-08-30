@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cya.springmybatisdemo.mapper.ArticleInfoMapper">
+
+    <select id="selectArticleInfoByid" resultType="com.cya.springmybatisdemo.model.ArticleInfo">
+        SELECT
+            ta.*,
+            tb.username,
+            tb.age
+        FROM article_info ta
+                 LEFT JOIN user_info tb
+                           ON ta.uid=tb.id
+        WHERE ta.id=1
+    </select>
+</mapper>

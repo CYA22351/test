@@ -27,11 +27,24 @@
         //@ResultMap(value = "BaseMap")
         @Select("select * from user_info where id=#{id}")
         UserInfo selectAllById(Integer id);
-
+        //多个参数重定向
         @Select("select * from user_info where username=#{userName} and password=#{password}")
         List<UserInfo> selectByNameAndPassword(@Param("userName") String username,@Param("password") String password);
+
+        @Options(useGeneratedKeys = true,keyProperty = "id")
+        @Insert("insert into user_info(username,password,age)"+
+                "values (#{userinfo.username},#{userinfo.password},#{userinfo.age})")
+        Integer insertUser2(@Param("userinfo") UserInfo userInfo);
         //插入
         @Options(useGeneratedKeys = true,keyProperty = "id")//获取自增id
         @Insert("insert into user_info (username,password,age) values (#{username},#{password},#{age})")
         Integer insertUser(UserInfo userInfo);
+
+        //删除
+        @Delete("delete from user_info where id=#{id}")
+        Integer deleteUser(Integer id);
+
+        //更新
+        @Update("update user_info set delete_flag=#{deleteFlag},phone=#{phone} where id=#{id}")
+        Integer updateUser(UserInfo userInfo);
     }

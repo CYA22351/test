@@ -49,4 +49,30 @@ class UserInfoMapperTest {
         System.out.println("影响行数："+result+".id:"+userInfo.getId());
 
     }
+
+    @Test
+    void insertUser2() {
+        UserInfo userInfo=new UserInfo();
+        userInfo.setUsername("chenyian4");
+        userInfo.setPassword("chenyian5");
+        userInfo.setAge(22);
+        Integer result=userInfoMapper.insertUser(userInfo);
+        System.out.println("影响行数："+result+".id:"+userInfo.getId());
+    }
+
+    @Test
+    void deleteUser() {
+        userInfoMapper.deleteUser(8);
+    }
+
+    @Test
+    void updateUser() {
+        UserInfo userInfo=new UserInfo();
+        userInfo.setId(7);
+        userInfo.setDeleteFlag(1);
+        userInfo.setPhone("19913236857");
+        userInfoMapper.updateUser(userInfo);
+    }
+
+
 }
