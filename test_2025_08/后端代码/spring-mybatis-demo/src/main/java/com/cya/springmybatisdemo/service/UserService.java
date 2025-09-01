@@ -19,6 +19,15 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserInfoMapper userInfoMapper;
+
+    public  UserInfo queryUserByUserNameAndPassword(String username, String password) {
+        List<UserInfo> userInfos = userInfoMapper.selectByNameAndPassword(username, password);
+        if (userInfos!=null&&userInfos.size()>=1){
+            return userInfos.get(0);
+        }
+        return null;
+    }
+
     public List<UserInfo> getAllUser() {
         return userInfoMapper.selectALL();
     }

@@ -40,6 +40,11 @@ class UserInfoMapperTest {
     }
 
     @Test
+    void selectByNameAndPassword2() {
+        userInfoMapper.selectByNameAndPassword2("zhangsan","' or 1='1").stream().forEach(x-> System.out.println(x));
+    }
+
+    @Test
     void insertUser() {
         UserInfo userInfo=new UserInfo();
         userInfo.setUsername("chenyian3");
@@ -75,4 +80,14 @@ class UserInfoMapperTest {
     }
 
 
+//    数据排序必须要用$
+    @Test
+    void selectUserInfoByOrder() {
+        userInfoMapper.SelectUserInfoByOrder("asc").stream().forEach(x-> System.out.println(x));
+    }
+
+    @Test
+    void selectUserInfoByLike() {
+        userInfoMapper.SelectUserInfoByLike("陈奕安").stream().forEach(x-> System.out.println(x));
+    }
 }

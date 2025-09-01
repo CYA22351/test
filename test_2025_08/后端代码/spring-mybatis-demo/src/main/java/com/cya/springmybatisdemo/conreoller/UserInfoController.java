@@ -31,4 +31,10 @@ public class UserInfoController {
     public UserInfo getUserInfoById(Integer id){
         return service.getUserInfoById(id);
     }
+    @RequestMapping("login")
+    public boolean getLogin(String username,String password){
+        UserInfo userInfo = service.queryUserByUserNameAndPassword(username, password);
+
+        return userInfo== null ? false:true;
+    }
 }

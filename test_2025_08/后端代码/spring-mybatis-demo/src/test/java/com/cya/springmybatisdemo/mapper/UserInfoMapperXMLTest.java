@@ -50,4 +50,15 @@ class UserInfoMapperXMLTest {
     void deleteUser() {
         userInfoMapperXML.deleteUser(12);
     }
+
+    @Test
+    void insertUser3() {
+        UserInfo userInfo=new UserInfo();
+      userInfo.setUsername("陈奕安11");
+        userInfo.setPassword("203816");
+       userInfo.setAge(22);
+    userInfo.setGender(1);
+      //  userInfo.setPhone("19913236857");
+        userInfoMapperXML.insertUser3(userInfo);
+    }
 }

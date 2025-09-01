@@ -23,6 +23,8 @@ public interface UserInfoMapperXML {
 
     Integer insertUser2(@Param("userinfo") UserInfo userInfo);
 
+    Integer insertUser3( UserInfo userInfo);
+
     Integer updateUser(String password,Integer age,Integer id);
 
     Integer deleteUser(Integer id);

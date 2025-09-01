@@ -31,6 +31,9 @@
         @Select("select * from user_info where username=#{userName} and password=#{password}")
         List<UserInfo> selectByNameAndPassword(@Param("userName") String username,@Param("password") String password);
 
+        @Select("select * from user_info where username='${userName}' and password='${password}'")
+        List<UserInfo> selectByNameAndPassword2(@Param("userName") String username,@Param("password") String password);
+
         @Options(useGeneratedKeys = true,keyProperty = "id")
         @Insert("insert into user_info(username,password,age)"+
                 "values (#{userinfo.username},#{userinfo.password},#{userinfo.age})")
@@ -47,4 +50,12 @@
         //更新
         @Update("update user_info set delete_flag=#{deleteFlag},phone=#{phone} where id=#{id}")
         Integer updateUser(UserInfo userInfo);
+
+        //数据排序必须用$,使用时必须防止sql注入，
+        @Select("select * from user_info order by id ${order}")
+        List<UserInfo> SelectUserInfoByOrder(String order);
+
+        //模糊查询
+        @Select("select * from user_info where username like CONCAT('%',#{username},'%')")
+        List<UserInfo> SelectUserInfoByLike(String userNaem);
     }

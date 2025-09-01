@@ -36,4 +36,47 @@
 
         insert into user_info(username,password,age) values (#{userinfo.username},#{userinfo.password},#{userinfo.age})
     </insert>
+
+<!--    if标签-->
+    <insert id="insertUser3" >
+
+        insert into user_info
+        <trim prefixOverrides="," suffixOverrides="," prefix="(" suffix=")">
+            <if test="username!=null">
+                username,
+            </if>
+            <if test="password!=null">
+               password,
+            </if>
+            <if test="age!=null">
+                age,
+            </if>
+            <if test="gender!=null">
+            gender,
+        </if>
+            <if test="phone!=null">
+                phone
+            </if>
+        </trim>
+
+        values
+                <trim prefixOverrides="," suffixOverrides="," prefix="(" suffix=")">
+                    <if test="username!=null">
+                        #{username},
+                    </if>
+                    <if test="password!=null">
+                         #{password},
+                    </if>
+                    <if test="age!=null">
+                         #{age},
+                    </if>
+                    <if test="gender!=null">
+                        #{gender},
+                    </if>
+                    <if test="phone!=null" >
+                        #{phone}
+                    </if>
+                </trim>
+
+    </insert>
 </mapper>
