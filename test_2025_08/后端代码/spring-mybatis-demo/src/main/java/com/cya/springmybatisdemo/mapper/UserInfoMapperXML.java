@@ -29,4 +29,6 @@ public interface UserInfoMapperXML {
 
     Integer deleteUser(Integer id);
 
+    List<UserInfo> selectByCindition(UserInfo userInfo);
+
 }

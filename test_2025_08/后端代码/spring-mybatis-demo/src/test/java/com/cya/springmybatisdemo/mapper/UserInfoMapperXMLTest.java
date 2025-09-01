@@ -61,4 +61,12 @@ class UserInfoMapperXMLTest {
       //  userInfo.setPhone("19913236857");
         userInfoMapperXML.insertUser3(userInfo);
     }
+
+    @Test
+    void selectByCindition() {
+        UserInfo userInfo=new UserInfo();
+        userInfo.setPhone("1001");
+       userInfo.setDeleteFlag(0);
+        userInfoMapperXML.selectByCindition(userInfo).stream().forEach(x-> System.out.println(x));
+    }
 }

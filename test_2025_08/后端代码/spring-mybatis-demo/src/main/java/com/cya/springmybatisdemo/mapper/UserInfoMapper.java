@@ -58,4 +58,8 @@
         //模糊查询
         @Select("select * from user_info where username like CONCAT('%',#{username},'%')")
         List<UserInfo> SelectUserInfoByLike(String userNaem);
+
+        @Insert("<script>" +
+                "</script>")
+        Integer insertUser3(UserInfo userInfo);
     }
