@@ -31,4 +31,7 @@ public interface UserInfoMapperXML {
 
     List<UserInfo> selectByCindition(UserInfo userInfo);
 
+     Integer updateByConfition(UserInfo userInfo);
+
+     Integer batchDelete(List<Integer> ids );
 }

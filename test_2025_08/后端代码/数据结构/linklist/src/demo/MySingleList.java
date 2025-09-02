@@ -33,11 +33,14 @@ public class MySingleList {
        this.head=node1;
 
     }
+//    直接在head插入，时间复杂度为o（1）
     public void addFirst(int data){
         ListNode node=new ListNode(data);
         node.next=head;
         head=node;
     }
+
+    //需要先遍历链表到尾巴，时间复杂度为o（n）
     //尾插法
     public void addLast(int data){
         ListNode node=new ListNode(data);
@@ -89,11 +92,57 @@ public class MySingleList {
         }
         return false;
     }
+
+    private ListNode findNode(int key){
+        ListNode pre=head;
+        while (pre.next!=null){
+            if (pre.next.val==key){
+                return pre;
+            }
+            pre=pre.next;
+        }
+        return null;
+
+    }
+
     //删除第⼀次出现关键字为key的节点
     public void remove(int key){
+        if (head==null){
+            return;
+        }
+        if (head.val==key){
+            head=head.next;
+            return;
+        }
+        ListNode node = findNode(key);
+        if (node==null){
+            return;
+        }
+        ListNode del=node.next;
+        node.next=del.next;
+
     }
     //删除所有值为key的节点
     public void removeAllKey(int key){
+        if (head==null){
+            return;
+        }
+
+        ListNode prev=head;
+        ListNode cur=head.next;
+        while (cur!=null){
+            if (cur.val==key){
+                prev.next=cur.next;
+                cur=cur.next;
+            }
+            else {
+                prev=cur;
+                cur=cur.next;
+            }
+        }
+        if (head.val==key){
+            head=head.next;
+        }
     }
     //得到单链表的⻓度
     public int size(){
@@ -106,6 +155,7 @@ public class MySingleList {
         return count;
     }
     public void clear() {
+        head=null;
     }
     public void display() {}
     public void show(){
@@ -115,5 +165,34 @@ public class MySingleList {
             cur=cur.next;
         }
         System.out.println();
+    }
+    public ListNode reverseList(){
+        if(head==null){
+            return head;
+        }
+        if(head.next==null){
+            return head;
+        }
+        ListNode cur=head.next;
+        head.next=null;
+        while(cur!=null){
+            ListNode curN =cur.next;
+            cur.next=head;
+            head=cur;
+            cur=curN;
+        }
+        return head;
+    }
+    public ListNode middleNode(){
+        ListNode fast=head;
+        ListNode slow=head;
+        while(fast!=null&&fast.next!=null){
+
+            fast=fast.next.next;
+            slow=slow.next;
+
+
+        }
+        return slow;
     }
 }

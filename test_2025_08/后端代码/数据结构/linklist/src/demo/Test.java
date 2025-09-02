@@ -16,6 +16,12 @@ public class Test {
         System.out.println(mySingleList.contains(21));
         mySingleList.addIndex(2,33);
         mySingleList.show();
+        mySingleList.remove(33);
+        mySingleList.show();
+        mySingleList.reverseList();
+        mySingleList.show();
+        MySingleList.ListNode node = mySingleList.middleNode();
+        System.out.println(node.val);
 
     }
 }

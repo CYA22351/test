@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class UserInfoMapperXMLTest {
@@ -68,5 +70,22 @@ class UserInfoMapperXMLTest {
         userInfo.setPhone("1001");
        userInfo.setDeleteFlag(0);
         userInfoMapperXML.selectByCindition(userInfo).stream().forEach(x-> System.out.println(x));
+    }
+
+    @Test
+    void updateByConfition() {
+        UserInfo userInfo=new UserInfo();
+        userInfo.setId(20);
+        userInfo.setPassword("cya");
+        userInfo.setAge(22);
+//        userInfo.setGender(2);
+        userInfoMapperXML.updateByConfition(userInfo);
+
+    }
+
+    @Test
+    void batchDelete() {
+        List<Integer> ids=List.of(20,21,22,23);
+        userInfoMapperXML.batchDelete(ids);
     }
 }

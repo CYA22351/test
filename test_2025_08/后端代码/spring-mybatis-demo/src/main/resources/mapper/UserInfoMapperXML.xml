@@ -10,62 +10,120 @@
     <result property="updateTime" column="update_time"></result>
 
 </resultMap>
-    <update id="updateUser">
-    update user_info set password=#{password},age=#{age} where id=#{id}
-    </update>
-    <delete id="deleteUser">
-            delete from user_info where id=#{id}
-    </delete>
-
+<!--    sql片段-->
+    <sql id="sql">
+        select * from user_info
+    </sql>
 
     <select id="selectAll" resultType="com.cya.springmybatisdemo.model.UserInfo">
         select id, username, `password`, age, gender, phone, delete_flag as
             deleteFlag,create_time as createTime, update_time as updateTime from user_info
+
 --         select * from user_info
+
     </select>
+
     <select id="selectAll2" resultMap="BaseMap">
-        select * from user_info
+
+ <include refid="sql">
+
+ </include>
 
     </select>
 
-<!--    动态sql查询-->
+<!--        动态sql查询-->
     <select id="selectByCindition" resultType="com.cya.springmybatisdemo.model.UserInfo"
             parameterType="com.cya.springmybatisdemo.model.UserInfo">
         select * from user_info
-        <where> <trim prefixOverrides="and">
-            <if test="phone!=null">
-                and phone=#{phone}
-            </if>
-            <if test="deleteFlag!=null">
-                and delete_flag=#{deleteFlag}
-            </if>
-        </trim></where>
+        --         where语块没有内容是=时，会去除where关键字，当where语句块有查询条件时会添加where关键字，还会去除最前面的and
+        <where>
+            <trim prefixOverrides="and">
+                <if test="phone!=null">
+                    and phone=#{phone}
+                </if>
+                <if test="deleteFlag!=null">
+                    and delete_flag=#{deleteFlag}
+                </if>
+            </trim></where>
 
 
 
 
 
-<!--        select * from user_info where 1=1-->
-<!--        全部为null时，添加1=1                              <trim >-->
-<!--                                          <if test="phone!=null">-->
-<!--                                             and phone=#{phone}-->
-<!--                                          </if>-->
-<!--                                          <if test="deleteFlag!=null">-->
-<!--                                              and delete_flag=#{deleteFlag}-->
-<!--                                          </if>-->
-<!--                                      </trim>-->
+        <!--        select * from user_info where 1=1-->
+        <!--        全部为null时，添加1=1                              <trim >-->
+        <!--                                          <if test="phone!=null">-->
+        <!--                                             and phone=#{phone}-->
+        <!--                                          </if>-->
+        <!--                                          <if test="deleteFlag!=null">-->
+        <!--                                              and delete_flag=#{deleteFlag}-->
+        <!--                                          </if>-->
+        <!--                                      </trim>-->
 
-<!--                                    <trim prefixOverrides="and">-->
-<!--                                        <if test="phone!=null">-->
-<!--                                            phone=#{phone}-->
-<!--                                        </if>-->
-<!--                                        <if test="deleteFlag!=null">-->
-<!--                                            and delete_flag=#{deleteFlag}-->
-<!--                                        </if>-->
-<!--                                    </trim>-->
+        <!--                                    <trim prefixOverrides="and">-->
+        <!--                                        <if test="phone!=null">-->
+        <!--                                            phone=#{phone}-->
+        <!--                                        </if>-->
+        <!--                                        <if test="deleteFlag!=null">-->
+        <!--                                            and delete_flag=#{deleteFlag}-->
+        <!--                                        </if>-->
+        <!--                                    </trim>-->
 
 
     </select>
+    <update id="updateUser">
+    update user_info set password=#{password},age=#{age} where id=#{id}
+    </update>
+
+    <update id="updateByConfition">
+        update user_info
+--             set标签去除多余逗号，
+        <set>
+            <if test="password!=n8ll">
+                password=#{password},
+            </if>
+            <if test="age!=null">
+                age=#{age},
+            </if>
+            <if test="gender!=null">
+                gender=#{gender}
+            </if>
+        </set>
+
+
+--                            不能全部为空
+<!--                             <trim suffixOverrides=",">-->
+<!--                             <if test="password!=n8ll">-->
+<!--                                 password=#{password},-->
+<!--                             </if>-->
+<!--                                 <if test="age!=null">-->
+<!--                                     age=#{age},-->
+<!--                                 </if>-->
+<!--                                 <if test="gender!=null">-->
+<!--                                     gender=#{gender}-->
+<!--                                 </if>-->
+<!--                             </trim>-->
+
+                         where id=#{id}
+    </update>
+
+    <delete id="deleteUser">
+            delete from user_info where id=#{id}
+    </delete>
+    <delete id="batchDelete">
+        delete from user_info where id in
+--                                     (23,22,21,20)
+                              <foreach collection="ids" open="(" close=")" separator="," item="id">
+                                  #{id}
+                              </foreach>
+--         id=1 or id=2 or id=3
+<!--        <foreach collection="ids" separator="or" item="id">-->
+<!--           id= #{id}-->
+<!--        </foreach>-->
+    </delete>
+
+
+
 
     <insert id="insertUser">
         insert into user_info(username,password,age) values (#{username},#{password},#{age})
