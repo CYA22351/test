@@ -158,6 +158,14 @@ public class MySingleList {
         head=null;
     }
     public void display() {}
+    public void show(ListNode node){
+        ListNode cur=node; while (cur!=null){
+            System.out.print(cur.val+" ");
+            cur=cur.next;
+        }
+        System.out.println();
+
+    }
     public void show(){
         ListNode cur=head;
         while (cur!=null){
@@ -194,5 +202,48 @@ public class MySingleList {
 
         }
         return slow;
+    }
+    public ListNode partition( int x) {
+        // write code here‘
+        ListNode bs=null;
+        ListNode be=null;
+        ListNode as=null;
+        ListNode ae=null;
+        ListNode cur=head;
+        while(cur!=null){
+            if(cur.val<x){
+                if(bs==null){
+                    bs=be=cur;
+                }else{
+                    be.next=cur;
+                    be=cur;
+
+                }
+
+
+            }
+            else{
+                if(as==null){
+                    as=ae=cur;
+                }
+                else{
+                    ae.next=cur;
+                    ae=cur;
+
+                }
+
+            }
+            cur=cur.next;
+        }
+        if(bs==null){
+            return as;
+        }
+        be.next=as;
+        if(as!=null){
+            ae.next=null;
+        }
+
+        return bs;
+
     }
 }

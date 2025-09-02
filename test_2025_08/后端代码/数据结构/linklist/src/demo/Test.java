@@ -22,6 +22,8 @@ public class Test {
         mySingleList.show();
         MySingleList.ListNode node = mySingleList.middleNode();
         System.out.println(node.val);
+        MySingleList.ListNode partition = mySingleList.partition(24);
+        mySingleList.show(partition);
 
     }
 }
