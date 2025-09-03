@@ -1,5 +1,6 @@
-package com.cya.springbootdemo2;
+package com.cya.springbootdemo2.controller;
 
+import com.cya.springbootdemo2.modle.MessageInfo;
 import org.springframework.web.bind.annotation.*;
 
 /**

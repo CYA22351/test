@@ -1,5 +1,6 @@
 package com.cya.springbootdemo2;
 
+import com.cya.springbootdemo2.modle.userInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

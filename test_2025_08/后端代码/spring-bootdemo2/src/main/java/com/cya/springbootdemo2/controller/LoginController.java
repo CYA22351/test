@@ -1,4 +1,4 @@
-package com.cya.springbootdemo2;
+package com.cya.springbootdemo2.controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.util.StringUtils;

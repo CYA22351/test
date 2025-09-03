@@ -1,11 +1,13 @@
-package com.cya.springbootdemo2;
+package com.cya.springbootdemo2.controller;
 
+import com.cya.springbootdemo2.modle.MessageInfo;
+import com.cya.springbootdemo2.service.MessqgeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,8 @@ import java.util.List;
 @RequestMapping("message")
 @RestController
 public class MessageController {
+    @Autowired
+    private MessqgeService messqgeService;
     private List<MessageInfo> messageInfos=new ArrayList<>();
 //produces = "application/json",返回的是json
     //@RequestMapping(value = "publish",produces = "application/json")
@@ -32,13 +36,14 @@ public class MessageController {
         ||!StringUtils.hasLength(messageInfo.getMessage())){
             return "{\"ok\":0}";
     }
-     messageInfos.add(messageInfo);
+        messqgeService.addMessage(messageInfo);
+//     messageInfos.add(messageInfo);
 
         return "{\"ok\":1}";
 
 }
 @RequestMapping("getList")
 public List<MessageInfo> getList(){
-        return messageInfos;
+        return messqgeService.queryAll();
     }
 }

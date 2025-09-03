@@ -1,4 +1,4 @@
-package com.cya.springbootdemo2;
+package com.cya.springbootdemo2.modle;
 
 /**
  * @author ：陈奕安（3048279304@qq.com）

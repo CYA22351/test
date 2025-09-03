@@ -1,4 +1,4 @@
-package com.cya.springbootdemo2;
+package com.cya.springbootdemo2.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10df97b0-710f-4219-99b3-013598eea818" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/mapper/MessqgeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/service/MessqgeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/java/com/cya/springmybatisdemo/mapper/UserInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mybatis-demo/src/test/java/com/cya/springmybatisdemo/mapper/UserInfoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/MessageInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/modle/MessageInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/RespController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/RespController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/sumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/controller/sumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/userInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cya/springbootdemo2/modle/userInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cya/springbootdemo2/JsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cya/springbootdemo2/JsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/MessageInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/RequestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/RespController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/sumController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cya/springbootdemo2/userInfo.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -82,7 +101,7 @@
       <module name="spring-bootdemo2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cya.springbootdemo2.*" />
+          <option name="PATTERN" value="com.cya.springbootdemo2.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,7 +113,7 @@
       <module name="spring-bootdemo2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cya.springbootdemo2.*" />
+          <option name="PATTERN" value="com.cya.springbootdemo2.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,7 +128,7 @@
       <module name="spring-bootdemo2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cya.springbootdemo2.*" />
+          <option name="PATTERN" value="com.cya.springbootdemo2.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,7 +144,7 @@
       <module name="spring-bootdemo2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cya.springbootdemo2.*" />
+          <option name="PATTERN" value="com.cya.springbootdemo2.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -186,6 +205,8 @@
       <workItem from="1755088807493" duration="2307000" />
       <workItem from="1755230464845" duration="10240000" />
       <workItem from="1755848688210" duration="349000" />
+      <workItem from="1756859519660" duration="2520000" />
+      <workItem from="1756897055182" duration="2610000" />
     </task>
     <servers />
   </component>
