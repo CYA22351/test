@@ -3,6 +3,7 @@ package com.cya.bookmanagement.entity;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author ：陈奕安（3048279304@qq.com）
@@ -14,12 +15,14 @@ import java.math.BigDecimal;
 
 @Data
 public class BookInfo {
-    private  Integer bookId;
+    private Integer id;
     private String bookName;
     private String author;
-    private Integer num;
+    private Integer count;
     private BigDecimal price;
     private String publish;
     private Integer status;
-    private String statuscn;
+    private String statusCN;
+    private Date createTime;
+    private Date updateTime;
 }

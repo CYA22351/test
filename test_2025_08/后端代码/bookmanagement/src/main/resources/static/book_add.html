@@ -24,7 +24,7 @@
             </h2>
         </div>
 
-        <form id="addBook">
+        <form id="addBook" >
             <div class="form-group">
                 <label for="bookName">图书名称:</label>
                 <input type="text" class="form-control" placeholder="请输入图书名称" id="bookName" name="bookName">
@@ -64,8 +64,28 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script>
         function add() {
-            alert("添加成功");
-            location.href = "book_list.html";
+            $.ajax({
+                type:"post",
+                url:"/book/addBook",
+                data:$("#addBook").serialize(),
+                success:function (result){
+                    if (result==""){
+                        location.href="book_list.html"
+                    }else {
+                        //失败
+                        alert(result)
+                    }
+
+                }
+            })
+
+            //     data:{
+            //         // "bookName":$("#bookName").val()
+            //
+            //     }
+            // })
+            // alert("添加成功");
+            // location.href = "book_list.html";
         }
     </script>
 </body>

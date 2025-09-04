@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: bookmanagement
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/book_test?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true # ?????????? &
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  configuration: # ???? MyBatis??
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #????????
+      # ?? mybatis xml ??????? resources/mapper ?????? xml ??
+  mapper-locations: classpath:mapper/*.xml #**????????????

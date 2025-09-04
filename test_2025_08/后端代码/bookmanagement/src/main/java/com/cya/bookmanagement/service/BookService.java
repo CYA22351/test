@@ -1,7 +1,11 @@
 package com.cya.bookmanagement.service;
 
-import com.cya.bookmanagement.Dao.BookDao;
+
 import com.cya.bookmanagement.entity.BookInfo;
+import com.cya.bookmanagement.entity.PageRequest;
+import com.cya.bookmanagement.entity.ResponseResult;
+import com.cya.bookmanagement.enums.BookStatusEnum;
+import com.cya.bookmanagement.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -18,21 +22,35 @@ import java.util.List;
  */
 @Service
 public class BookService {
+    
+
     @Autowired
-    private BookDao bookDao;
-    public List<BookInfo> getList(){
+    private BookMapper bookMapper;
 
-        List<BookInfo> list=bookDao.mockData();
-        //对数据二次处理
-        for (BookInfo bookInfo:list){
-            if (bookInfo.getStatus()==1){
-                bookInfo.setStatuscn("可借阅");
-            }
-            else {
-                bookInfo.setStatuscn("不可借阅");
-            }
+    
 
+    public void addBook(BookInfo bookInfo) {
+        bookMapper.addBook(bookInfo);
+    }
+
+    public ResponseResult<BookInfo> getListByPage(PageRequest pageRequest){
+        Integer count=bookMapper.count();
+        List<BookInfo> bookInfos = bookMapper.selectBooksByPage(pageRequest);
+
+
+//对数据进行二次分析
+        for (BookInfo bookInfo:bookInfos){
+           bookInfo.setStatusCN(BookStatusEnum.getStatusByCode(bookInfo.getStatus()).getDesc());
         }
-        return list;
+
+        return new ResponseResult<BookInfo>(count,bookInfos,pageRequest);
+    }
+
+    public BookInfo queryBookById(Integer bookId) {
+        return bookMapper.queryBookById(bookId);
+    }
+
+    public void updateBook(BookInfo bookInfo) {
+        bookMapper.updateBook(bookInfo);
     }
 }

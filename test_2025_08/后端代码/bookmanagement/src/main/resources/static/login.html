@@ -37,13 +37,13 @@
                 type:"post",
                 url:"/user/login",
                 data:{
-                    username:$("#userName").val(),
+                    name:$("#userName").val(),
                     password:$("#password").val()
                 },
                 success:function (result){
                     if (result){
                         //账号密码正确
-                         location.href = "book_list.html";
+                         location.href = "book_list.html?currentPage=1";
                     }
                     else {
                         alert("账号或密码错误!")
