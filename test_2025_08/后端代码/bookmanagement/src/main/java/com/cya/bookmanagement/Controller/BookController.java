@@ -1,18 +1,23 @@
 package com.cya.bookmanagement.Controller;
 
-import com.cya.bookmanagement.entity.BookInfo;
-import com.cya.bookmanagement.entity.PageRequest;
-import com.cya.bookmanagement.entity.ResponseResult;
+import com.cya.bookmanagement.constant.Constants;
+import com.cya.bookmanagement.entity.*;
+import com.cya.bookmanagement.enums.BookStatusEnum;
+import com.cya.bookmanagement.enums.ResultCodeEnum;
 import com.cya.bookmanagement.service.BookService;
 import com.cya.bookmanagement.service.UserInfoService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 import java.util.Random;
 
@@ -59,9 +64,18 @@ public class BookController {
 
     }
     @RequestMapping("/getListByPage")
-    public ResponseResult<BookInfo> getListByPage(PageRequest pageRequest){
+    public Result<ResponseResult<BookInfo>> getListByPage(PageRequest pageRequest, HttpSession session){
+        if (session.getAttribute(Constants.SESSION_USER_KEY)==null){
+            return Result.unlogin();
+
+        }
+        UserInfo userInfo =(UserInfo) session.getAttribute(Constants.SESSION_USER_KEY);
+        if (userInfo==null||userInfo.getId()<=0){
+         return Result.unlogin();
+        }
+
         ResponseResult<BookInfo> listByPage = bookService.getListByPage(pageRequest);
-        return listByPage;
+      return Result.success(listByPage);
 
     }
 
@@ -81,6 +95,35 @@ public class BookController {
         }catch (Exception e){
             log.error("修改图书发生异常，e",e);
             return "修改图书发生异常";
+        }
+    }
+
+    @RequestMapping("/deleteBook")
+    public String delete(Integer BookId){
+        log.info("删除，bookInfo:{}",BookId);
+        try {
+            BookInfo bookInfo=new BookInfo();
+            bookInfo.setId(BookId);
+            bookInfo.setStatus(BookStatusEnum.DELETED.getCode());
+            bookService.updateBook(bookInfo);
+            //成功
+            return "";
+        }catch (Exception e){
+            log.error("修改图书发生异常，e",e);
+            return "删除图书发生异常";
+        }
+    }
+
+    @RequestMapping("/batchDeleteBook")
+    public boolean batchDeleteBook(@RequestParam List<Integer> ids) {
+        log.info("批量删除图书：ids{}",ids);
+        try {
+            bookService.batchDeleteBook(ids);
+
+            return true;
+        }catch (Exception e){
+            log.error("批量删除图书失败,e:",e);
+            return false;
         }
     }
 

@@ -1,5 +1,6 @@
 package com.cya.bookmanagement.Controller;
 
+import com.cya.bookmanagement.constant.Constants;
 import com.cya.bookmanagement.entity.UserInfo;
 import com.cya.bookmanagement.service.UserInfoService;
 import jakarta.servlet.http.HttpSession;
@@ -35,7 +36,7 @@ public class UserController {
         }
         if (password.equals(userInfo.getPassword())) {
 
-            session.setAttribute("session",userInfo);
+            session.setAttribute(Constants.SESSION_USER_KEY,userInfo);
             //密码正确
             return true;
         }
