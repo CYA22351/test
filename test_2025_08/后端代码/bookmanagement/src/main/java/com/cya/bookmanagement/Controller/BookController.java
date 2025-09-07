@@ -65,14 +65,14 @@ public class BookController {
     }
     @RequestMapping("/getListByPage")
     public Result<ResponseResult<BookInfo>> getListByPage(PageRequest pageRequest, HttpSession session){
-        if (session.getAttribute(Constants.SESSION_USER_KEY)==null){
-            return Result.unlogin();
-
-        }
-        UserInfo userInfo =(UserInfo) session.getAttribute(Constants.SESSION_USER_KEY);
-        if (userInfo==null||userInfo.getId()<=0){
-         return Result.unlogin();
-        }
+//        if (session.getAttribute(Constants.SESSION_USER_KEY)==null){
+//            return Result.unlogin();
+//
+//        }
+//        UserInfo userInfo =(UserInfo) session.getAttribute(Constants.SESSION_USER_KEY);
+//        if (userInfo==null||userInfo.getId()<=0){
+//         return Result.unlogin();
+//        }
 
         ResponseResult<BookInfo> listByPage = bookService.getListByPage(pageRequest);
       return Result.success(listByPage);

@@ -4,6 +4,7 @@ import com.cya.bookmanagement.constant.Constants;
 import com.cya.bookmanagement.entity.UserInfo;
 import com.cya.bookmanagement.service.UserInfoService;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @modified By：
  * @version:
  */
+@Slf4j
 @RequestMapping("/user")
 @RestController//生成UserController对象并调用
 public class UserController {
@@ -23,6 +25,7 @@ public class UserController {
     private UserInfoService userInfoService;
     @RequestMapping("login")
     public Boolean login(String name, String password, HttpSession session){
+        log.info("用户登录");
         if (!StringUtils.hasLength(name)||!StringUtils.hasLength(password)){
             return false;
         }

@@ -123,4 +123,31 @@ class UserInfoMapperTest {
         userInfoMapper.delete(userInfoUpdateWrapper);
     }
 
+    @Test
+    void selectById2() {
+        UserInfo userInfo=userInfoMapper.selectById2(2);
+        System.out.println(userInfo);
+    }
+
+    @Test
+    void selectById3() {
+        UserInfo userInfo=userInfoMapper.selectById3(3);
+        System.out.println(userInfo);
+    }
+
+    @Test
+    void selectUserInfoByCondition() {
+        QueryWrapper<UserInfo> queryWrapper=new QueryWrapper<>();
+        queryWrapper.lt("age",20);
+        userInfoMapper.selectUserInfoByCondition(queryWrapper).stream().forEach(x-> System.out.println(x));
+    }
+
+    @Test
+    void updateById2() {
+        //where id in (1,2,3)
+
+        QueryWrapper<UserInfo> queryWrapper=new QueryWrapper<>();
+        queryWrapper.in("id",List.of(1,2,3));
+        userInfoMapper.updateById2(10,queryWrapper);
+    }
 }
