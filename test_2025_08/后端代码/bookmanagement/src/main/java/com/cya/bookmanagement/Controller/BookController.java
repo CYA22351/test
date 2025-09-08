@@ -37,7 +37,7 @@ public class BookController {
     private BookService bookService;
 
 
-    @RequestMapping("/addBook")
+    @RequestMapping(value = "/addBook",produces = "application/json")
     public String addBook(BookInfo bookInfo){
         log.info("添加图书，request：{}",bookInfo);
         //{}占位符
@@ -85,21 +85,21 @@ public class BookController {
        return bookService.queryBookById(bookId);
     }
 
-    @RequestMapping("/updateBook")
-    public String updateBook(BookInfo bookInfo){
+    @RequestMapping(value = "/updateBook")
+    public Result updateBook(BookInfo bookInfo){
         log.info("修改图书，bookInfo:{}",bookInfo);
         try {
             bookService.updateBook(bookInfo);
             //成功
-            return "";
+            return Result.success("");
         }catch (Exception e){
             log.error("修改图书发生异常，e",e);
-            return "修改图书发生异常";
+            return Result.fail("修改图书发生异常");
         }
     }
 
     @RequestMapping("/deleteBook")
-    public String delete(Integer BookId){
+    public Result delete(Integer BookId){
         log.info("删除，bookInfo:{}",BookId);
         try {
             BookInfo bookInfo=new BookInfo();
@@ -107,10 +107,10 @@ public class BookController {
             bookInfo.setStatus(BookStatusEnum.DELETED.getCode());
             bookService.updateBook(bookInfo);
             //成功
-            return "";
+            return Result.success("");
         }catch (Exception e){
             log.error("修改图书发生异常，e",e);
-            return "删除图书发生异常";
+            return Result.fail("修改图书发生异常，请联系管理员");
         }
     }
 

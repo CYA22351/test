@@ -187,10 +187,13 @@
                         type: "post",
                         url:"/book/deleteBook?BookId="+id,//直接在路径上写参数，路径上册参数要跟后端的接口参数一样
                         success:function (result){
-                            if (result==""){
+                            console.log(result)
+                            console.log(result.data)
+                            console.log(result.code)
+                            if (result.code=="SUCCESS"&&result.data==""){
                                 location.href="book_list.html?currentPage=1"
                             }else {
-                                alert(result)
+                                alert(result.errMsg)
                             }
                         }
                     })
@@ -211,7 +214,7 @@
                         type:"post",
                         url:"/book/batchDeleteBook?ids="+ids,
                         success:function (result){
-                            if (result){
+                            if (result.code=="SUCCESS"&&result.data==true){
                                 location.href="book_list.html?currentPage=1";
                             }else {
                                 alert("批量删除失败")

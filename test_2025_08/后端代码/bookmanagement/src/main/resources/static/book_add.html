@@ -69,14 +69,20 @@
                 url:"/book/addBook",
                 data:$("#addBook").serialize(),
                 success:function (result){
-                    if (result==""){
+                    if (result.code=="SUCCESS"&&result.data==""){
                         location.href="book_list.html"
                     }else {
                         //失败
-                        alert(result)
+                        alert(result.errMsg)
                     }
 
-                }
+                },
+                error:function(error){
+                    if (error.status==401){
+                        //用户未登录
+                        location.href="login.html"
+                    }
+            }
             })
 
             //     data:{

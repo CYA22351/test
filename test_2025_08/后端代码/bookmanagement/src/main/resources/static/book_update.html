@@ -60,25 +60,41 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script>
         getBookInfo();
+        // 获得修改图书的信息
         function getBookInfo(){
             $.ajax({
                 type:"get",
                 url:"/book/queryBookById"+location.search,
-                success:function (bookInfo){
-                    if (bookInfo!=null)
-                    {
-                        $("#bookId").val(bookInfo.id)
-                        $("#bookName").val(bookInfo.bookName);
-                        $("#bookAuthor").val(bookInfo.author);
-                        $("#bookStock").val(bookInfo.count);
-                        $("#bookPrice").val(bookInfo.price);
-                        $("#bookPublisher").val(bookInfo.publish);
-                        $("#bookStatus").val(bookInfo.status);
+                success:function (result){
 
+                    if (result.code=="SUCCESS"&&result.data!=null){
+                        var bookInfo=result.data;
+                        if (bookInfo!=null)
+                        {
+                            $("#bookId").val(bookInfo.id)
+                            $("#bookName").val(bookInfo.bookName);
+                            $("#bookAuthor").val(bookInfo.author);
+                            $("#bookStock").val(bookInfo.count);
+                            $("#bookPrice").val(bookInfo.price);
+                            $("#bookPublisher").val(bookInfo.publish);
+                            $("#bookStatus").val(bookInfo.status);
+
+
+                        }
 
                     }
+                    else {
+                        console.log(result)
+                    }
 
+                },
+                error:function (error){
+                    if (error.status==401){
+                        location.href="login.html"
+                    }
+                    console.log(error)
                 }
+
             })
         }
         function update() {
@@ -87,10 +103,10 @@
                 url:"/book/updateBook",
                 data:$("#updateBook").serialize(),//拿到整个from表单的输入值
                 success:function (result){
-                    if (result==""){
+                    if (result.code=="SUCCESS"&&result.data==""){
                         location.href="book_list.html?currentPage=1"
                     }else {
-                        alert(result)
+                        alert(result.errMsg)
                     }
                 }
             })

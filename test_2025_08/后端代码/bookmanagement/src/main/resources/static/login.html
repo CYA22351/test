@@ -41,7 +41,7 @@
                     password:$("#password").val()
                 },
                 success:function (result){
-                    if (result){
+                    if (result.code=="SUCCESS"&&result.data==true){
                         //账号密码正确
                          location.href = "book_list.html?currentPage=1";
                     }
