@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 public class ResponseAdvice implements ResponseBodyAdvice {
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private ObjectMapper  objectMapper;
 
     @Override
     public boolean supports(MethodParameter returnType, Class converterType) {

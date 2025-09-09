@@ -34,6 +34,7 @@ public class BookService {
     }
 
     public ResponseResult<BookInfo> getListByPage(PageRequest pageRequest){
+        long start=System.currentTimeMillis();
         Integer count=bookMapper.count();
         List<BookInfo> bookInfos = bookMapper.selectBooksByPage(pageRequest);
 
@@ -42,7 +43,8 @@ public class BookService {
         for (BookInfo bookInfo:bookInfos){
            bookInfo.setStatusCN(BookStatusEnum.getStatusByCode(bookInfo.getStatus()).getDesc());
         }
-
+long end=System.currentTimeMillis();
+        System.out.println(end-start+"ms");
         return new ResponseResult<BookInfo>(count,bookInfos,pageRequest);
     }
 
