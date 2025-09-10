@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @version:
  */
 @Aspect
-@Component
+//@Component
 @Slf4j
 @Order(3)
 public class AspectDemo2 {

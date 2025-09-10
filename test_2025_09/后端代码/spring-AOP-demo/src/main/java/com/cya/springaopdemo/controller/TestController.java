@@ -2,6 +2,7 @@ package com.cya.springaopdemo.controller;
 
 
 
+import com.cya.springaopdemo.aspect.MyAspect;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,7 @@ public class TestController {
         return 1;
     }
 
+    @MyAspect
     @RequestMapping("/t2")
     public boolean t2(){
         System.out.println("执行t2");

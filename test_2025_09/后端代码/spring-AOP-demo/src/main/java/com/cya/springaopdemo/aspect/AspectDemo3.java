@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @version:
  */
 @Aspect
-@Component
+//@Component
 @Slf4j
 @Order(2)
 public class AspectDemo3 {
@@ -25,12 +25,12 @@ public class AspectDemo3 {
 
     @Before("execution(* com.cya.springaopdemo.controller.*.*(..))")
     public void doBefore(){
-        log.info("AspectDemo2 doBefore...");
+        log.info("AspectDemo3 doBefore...");
 
     }
     @After("execution(* com.cya.springaopdemo.controller.*.*(..))")
     public void doAfter(){
-        log.info("AspectDemo2 doAfter...");
+        log.info("AspectDemo3 doAfter...");
 
     }
 }
