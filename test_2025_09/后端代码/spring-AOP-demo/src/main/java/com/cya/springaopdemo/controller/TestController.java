@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 @RestController
 public class TestController {
+
     @RequestMapping("/t1")
     public Integer t1(){
 
@@ -32,6 +33,7 @@ public class TestController {
         System.out.println("执行t2");
         return true;
     }
+
     @RequestMapping("/t3")
     public String t3(){
 

@@ -18,7 +18,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MyAspectDemo {
 
+//    根据注解
     @Around("@annotation(com.cya.springaopdemo.aspect.MyAspect)")
+//    @Around("@@annotation(org.springframework.web.bind.annotation.RequestMapping)")
     public Object recordTime(ProceedingJoinPoint pjp)  {
         log.info("目标方法执行前");
         long begin=System.currentTimeMillis();

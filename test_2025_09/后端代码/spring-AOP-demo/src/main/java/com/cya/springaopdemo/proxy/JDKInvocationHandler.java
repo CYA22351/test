@@ -12,12 +12,14 @@ import java.lang.reflect.Method;
  */
 public class JDKInvocationHandler implements InvocationHandler {
 
+
+    //被代理对象
     private Object target;
 
     public JDKInvocationHandler(Object target) {
         this.target = target;
     }
-
+//执行目标方法
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("我是中介。我开始代理");
