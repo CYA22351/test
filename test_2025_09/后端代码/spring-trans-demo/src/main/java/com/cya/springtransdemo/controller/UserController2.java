@@ -1,6 +1,7 @@
 package com.cya.springtransdemo.controller;
 
 import com.cya.springtransdemo.mapper.UserInfoMapper;
+import com.cya.springtransdemo.service.LogService;
 import com.cya.springtransdemo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ import java.io.IOException;
 public class UserController2 {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LogService logService;
+
     @Autowired
     private View error;
 
@@ -94,4 +99,16 @@ if (true){
 
         return "注册成功";
     }
+    @RequestMapping("/r5")
+    @Transactional//当发生异常事务回滚，正常运行，正常提交，但如果异常进行捕获，事务正常提交，如果异常重新抛出，事务还是会进行回滚
+    public String r5(String name, String password) throws IOException {
+
+
+        Integer result=userService.registryUser(name, password);
+        log.info("用户注册成功，影响行数：{}",result);
+      Integer logResult=logService.insertLog(name,"用户注册");
+      log.info("日志记录成功,影响行数：{}",logResult);
+        return "注册成功";
+    }
+
 }
