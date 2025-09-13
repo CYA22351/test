@@ -5,6 +5,7 @@ import com.cya.springblogdemo.pojo.response.BlogInfoResopnse;
 import com.cya.springblogdemo.pojo.response.Result;
 import com.cya.springblogdemo.service.BlogService;
 import jakarta.annotation.Resource;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +32,12 @@ public class BlogController {
         log.info("获取博客列表");
        List<BlogInfoResopnse> blogInfos= blogService.getList();
        return blogInfos;
+    }
+
+    @RequestMapping("/getBlogDetail")
+    public BlogInfoResopnse getBlogDetail(@NotNull Integer blogId){
+
+        log.info("获取博客详情，blogId：{}",blogId);
+        return blogService.getBlogDetail(blogId);
     }
 }

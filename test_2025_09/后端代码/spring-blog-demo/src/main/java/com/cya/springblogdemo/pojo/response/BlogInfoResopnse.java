@@ -23,8 +23,8 @@ public class BlogInfoResopnse {
     private String title;
     private String content;
     private Integer userId;
-    @JsonFormat(pattern = "yyyy年mm月dd日")
-    private LocalDateTime createTime;
+    @JsonFormat(pattern = "yyyy年MM月dd日")
+    private Date createTime;
 
 //    public String getContent() {
 //        return content==null?"":content.substring(0,50);
