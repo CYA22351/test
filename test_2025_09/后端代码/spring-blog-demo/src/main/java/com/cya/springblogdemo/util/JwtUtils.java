@@ -4,6 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
@@ -17,6 +19,7 @@ import java.util.Map;
  * @version:
  */
 //令牌
+    @Slf4j
 public class JwtUtils {
     //固定签名key
     private static String SECRET_STRING="5J5IjSWcSocbMZLGOmJ0AAo4OwaGKjLE00tUmJEAC4M=";
@@ -34,8 +37,19 @@ public class JwtUtils {
 
     public static Object parssToken(String token){
 
+        if (!StringUtils.hasLength(token)){
+            return null;
+        }
         JwtParser build = Jwts.parserBuilder().setSigningKey(key).build();
-        Claims claims=build.parseClaimsJws(token).getBody();
+        Claims claims=null;
+        try {
+            claims=build.parseClaimsJws(token).getBody();
+        }
+        catch (Exception e){
+            log.error("token解析失败，token:"+token);
+        }
         return claims;
     }
+
+
 }

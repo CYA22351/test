@@ -17,5 +17,6 @@ public class UserLoginRequest {
     @Length(max = 20,min = 2,message = "用户名长度不规范")
     private String userName;
     @NotNull(message = "密码不能为空")
+    @Length(min = 5,message="密码长度不能小于5")
     private String password;
 }

@@ -29,7 +29,7 @@ public class UserController {
     @RequestMapping("/login")
 //    @RequestBody参数类型为json
     public UserLoginResponse login(@RequestBody @Validated UserLoginRequest userLoginRequest){
-        log.info("用户登录，用户名：",userLoginRequest.getUserName());
+        log.info("用户登录，用户名:{}",userLoginRequest.getUserName());
         return userService.checkPassword(userLoginRequest);
     }
 }
