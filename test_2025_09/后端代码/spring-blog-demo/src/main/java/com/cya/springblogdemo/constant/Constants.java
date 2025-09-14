@@ -9,4 +9,10 @@ package com.cya.springblogdemo.constant;
  */
 public class Constants {
     public static final String USER_TOKEN_HEADER_KEY="user_token";
+
+    /**
+     * 博客删除标志
+     */
+    public static final Integer BLOG_DELETE=1;
+    public static final Integer BLOG_NORMAL=0;
 }

@@ -39,19 +39,62 @@
     <script src="js/common.js"></script>
     <script type="text/javascript">
 
-        $(function () {
-            var editor = editormd("editor", {
-                width  : "100%",
-                height : "550px",
-                path: "blog-editormd/lib/"
-            });
-        });
+        // $(function () {
+        //     var editor = editormd("editor", {
+        //         width  : "100%",
+        //         height : "550px",
+        //         path: "blog-editormd/lib/"
+        //     });
+        // });
         
         function submit() {
-           
+           $.ajax({
+               type: "post",
+               url:"/blog/update",
+               contentType:"application/json",
+               data:JSON.stringify({
+                   id:$("#blogId").val(),
+                   content:$("#content").val(),
+                    title:$("#title").val()
+               }),
+               success:function (result){
+                   if (result.code=="SUCCESS"&&result.data==true){
+                       location.href="blog_detail.html"+location.search;
+
+                   }else {
+                       alert("删除失败")
+                   }
+               }
+           })
         }
+
         function getBlogInfo() {
-            
+            $.ajax({
+                type:"get",
+                url:"/blog/getBlogDetail"+location.search,
+                success:function (result){
+                    if (result.code=="FAIL"){
+                        alert(result.errMsg)
+                        return;
+                    }
+                    if (result.code=="SUCCESS"&&result.data!=null){
+                        $("#blogId").val(result.data.id)
+                        $("#title").val(result.data.title);
+                        // $("#content").val(result.data.content);
+                        editormd("editor", {
+                            width  : "100%",
+                            height : "550px",
+                            path: "blog-editormd/lib/",
+                            onload:function (){
+                                this.watch();
+                                this.setMarkdown(result.data.content);
+                            }
+
+                        });
+                    }
+
+                }
+            })
         }
         getBlogInfo();
     </script>

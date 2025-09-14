@@ -25,8 +25,8 @@
     <div class="container">
         <div class="left">
             <div class="card">
-                <img src="pic/doge.jpg" alt="">
-                <h3>比特汤老师</h3>
+                <img src="pic/头像.jpg" alt="">
+                <h3></h3>
                 <a href="#">GitHub 地址</a>
                 <div class="row">
                     <span>文章</span>
@@ -42,10 +42,10 @@
             <div class="content">
                 <div class="title"></div>
                 <div class="date"></div>
-                <div class="detail"></div>
+                <div class="detail" id="detail" style="background: transparent"></div>
                 <div class="operating">
-                    <button onclick="window.location.href='blog_update.html'">编辑</button>
-                    <button onclick="deleteBlog()">删除</button>
+<!--                    <button onclick="window.location.href='blog_update.html'">编辑</button>-->
+<!--                    <button onclick="deleteBlog()">删除</button>-->
                 </div>
             </div>
 
@@ -65,6 +65,8 @@
         //var userUrl = "/user/getAuthorInfo" + location.search;
         //getUserInfo(userUrl);
         getBlogDetail();
+        var url="/user/getAuthorInfo"+location.search;
+        getUserInfo(url);
 
         function getBlogDetail(){
             $.ajax({
@@ -80,14 +82,55 @@
                         // 中间空一格
                         $(".content .title").text(result.data.title)
                         $(".content .date").text(result.data.createTime)
-                        $(".content .detail").text(result.data.content)
+                        editormd.markdownToHTML("detail", {
+                            markdown : result.data.content ,
+
+                        });
+                        // 判断是否显示编辑和删除按钮
+                        let loginUserId=localStorage.getItem("loginUserId");
+                        if (result.data.userId==loginUserId){
+                            //当前作者是登录用户，按钮显示
+                            let blogId=result.data.id;
+                           let finalHtml='<button onclick="window.location.href=\'blog_update.html?blogId='+blogId+'\'">编辑</button>';
+                            finalHtml+='<button onclick="deleteBlog('+blogId+')">删除</button>';
+
+                            $(".content .operating").html(finalHtml);
+
+                        }
+
 
                     }
                 }
             })
         }
+        // function getAuthorInfo(){
+        //     $.ajax({
+        //         type: "get",
+        //         url: "/user/getAuthorInfo"+location.search,
+        //         success:function (result){
+        //             if (result!=null&&result.code=="SUCCESS"&&result.data!=null){
+        //                 var userInfo=result.data;
+        //                 $(".card h3").text(userInfo.userName);
+        //                 $(".left .card a").attr("href",userInfo.githubUrl);
+        //             }
+        //         }
+        //     })
+        // }
 
-        function deleteBlog() {
+
+        function deleteBlog(blogId) {
+            $.ajax({
+                type: "post",
+                url:"/blog/delete?blogId="+blogId,
+                success:function (result){
+                    if (result.code=="SUCCESS"&&result.data==true){
+                        location.href="blog_list.html";
+
+                    }else {
+                        alert("删除失败")
+                    }
+                }
+            })
             alert("删除博客");
         }
     </script>

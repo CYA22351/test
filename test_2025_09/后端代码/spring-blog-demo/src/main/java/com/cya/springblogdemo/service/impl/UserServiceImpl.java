@@ -3,11 +3,16 @@ package com.cya.springblogdemo.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cya.springblogdemo.common.exception.BlogException;
 import com.cya.springblogdemo.mapper.UserInfoMapper;
+import com.cya.springblogdemo.pojo.dataobject.BlogInfo;
 import com.cya.springblogdemo.pojo.dataobject.UserInfo;
 import com.cya.springblogdemo.pojo.request.UserLoginRequest;
+import com.cya.springblogdemo.pojo.response.UserInfoResponse;
 import com.cya.springblogdemo.pojo.response.UserLoginResponse;
+import com.cya.springblogdemo.service.BlogService;
 import com.cya.springblogdemo.service.UserService;
+import com.cya.springblogdemo.util.BeanTransUtils;
 import com.cya.springblogdemo.util.JwtUtils;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +30,9 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserInfoMapper userInfoMapper;
+
+    @Resource(name = "blogServiceImpl")
+    private BlogService  blogService;
 
     @Override
     public UserLoginResponse checkPassword(UserLoginRequest userLoginRequest) {
@@ -47,5 +55,25 @@ public class UserServiceImpl implements UserService {
         UserLoginResponse response=new UserLoginResponse(userInfo.getId(),token);
         return response;
 
+    }
+
+    @Override
+    public UserInfoResponse getUserInfo(Integer userId) {
+        QueryWrapper<UserInfo> queryWrapper=new QueryWrapper<>();
+        queryWrapper.lambda().eq(UserInfo::getDeleteFlag,0)
+                .eq(UserInfo::getId,userId);
+        UserInfo userInfo=userInfoMapper.selectOne(queryWrapper);
+
+        return BeanTransUtils.trans(userInfo);
+    }
+
+    @Override
+    public UserInfoResponse getAuthorInfo(Integer blogId) {
+        BlogInfo blogInfo = blogService.getBlogInfo(blogId);
+
+        if (blogInfo==null||blogInfo.getId()<=0){
+            throw new BlogException("博客不存在");
+        }
+        return getUserInfo(blogInfo.getUserId());
     }
 }
