@@ -72,4 +72,11 @@ public class BlogController {
         log.info("删除博客,id:{}",blogId);
         return blogService.delete(blogId);
     }
+
+    @RequestMapping("/CountBlog")
+    public Integer CountBlog(){
+
+        return blogService.CountBlog();
+    }
+
 }

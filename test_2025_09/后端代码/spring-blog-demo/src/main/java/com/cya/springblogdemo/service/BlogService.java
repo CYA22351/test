@@ -26,4 +26,6 @@ public interface BlogService {
     boolean updateBlog(UpdateBlogRequest updateBlogRequest);
 
     boolean delete(Integer blogId);
+
+    Integer CountBlog();
 }

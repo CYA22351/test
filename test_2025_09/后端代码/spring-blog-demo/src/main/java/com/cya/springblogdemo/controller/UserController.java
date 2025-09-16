@@ -1,6 +1,7 @@
 package com.cya.springblogdemo.controller;
 
 import com.cya.springblogdemo.pojo.request.UserLoginRequest;
+import com.cya.springblogdemo.pojo.request.UserRegisterRequest;
 import com.cya.springblogdemo.pojo.response.UserInfoResponse;
 import com.cya.springblogdemo.pojo.response.UserLoginResponse;
 import com.cya.springblogdemo.service.UserService;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author ：陈奕安（3048279304@qq.com）
@@ -37,17 +39,22 @@ public class UserController {
         return userService.checkPassword(userLoginRequest);
     }
 
-    @RequestMapping("getUserInfo")
+    @RequestMapping("/getUserInfo")
     public UserInfoResponse getUserInfo(@NotNull(message = "userId不能为空") Integer userId){
         log.info("获取用户Id:"+userId);
         return userService.getUserInfo(userId);
     }
 
-    @RequestMapping("getAuthorInfo")
+    @RequestMapping("/getAuthorInfo")
     public UserInfoResponse getAuthorInfo(@NotNull(message = "blogId不能为空") Integer blogId){
 log.info("获取作者id："+blogId);
 return userService.getAuthorInfo(blogId);
 
 
+    }
+    @RequestMapping("/regiestUserInfo")
+    public boolean regiestUserInfo(@RequestBody @Validated UserRegisterRequest userRegisterRequest){
+        log.info("获取注册用户名,用户名：{}",userRegisterRequest.getUserName());
+        return userService.insertUserInfo(userRegisterRequest);
     }
 }

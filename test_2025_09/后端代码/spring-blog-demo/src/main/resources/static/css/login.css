@@ -36,10 +36,13 @@
     outline: none;
     padding-left: 10px;
 }
-.login-dialog #submit{
+.login-dialog .btn-submit{
     width: 280px;
     height: 40px;
     background-color: green;
     color: white;
     border: none;
+}
+.login-dialog .mt10 {
+    margin-top: 10px;
 }

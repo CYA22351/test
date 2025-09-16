@@ -31,7 +31,7 @@
                     <span>分类</span>
                 </div>
                 <div class="row">
-                    <span>2</span>
+                    <span class="blogCount"></span>
                     <span>1</span>
                 </div>
             </div>
@@ -44,6 +44,7 @@
     <script src="js/common.js"></script>
 <script>
         getBlogList();
+        getBlogInfoCount();
         var url="/user/getUserInfo?userId="+localStorage.getItem("loginUserId")
         getUserInfo(url);
         function getBlogList(){
@@ -68,6 +69,17 @@
                 }
             })
         }
+        // function getBlogInfoCount(){
+        //     $.ajax({
+        //         type: "get",
+        //         url:"/blog/CountBlog",
+        //         success:function (result){
+        //             if (result!=null&&result.code=="SUCCESS"){
+        //                 $(".row .blogCount").text(result.data)
+        //             }
+        //         }
+        //     })
+        // }
         // function getUserInfo(){
         //     $.ajax({
         //         type: "get",

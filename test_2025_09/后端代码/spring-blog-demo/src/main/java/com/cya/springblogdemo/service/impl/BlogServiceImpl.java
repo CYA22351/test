@@ -5,6 +5,7 @@ import com.cya.springblogdemo.common.exception.BlogException;
 import com.cya.springblogdemo.constant.Constants;
 import com.cya.springblogdemo.mapper.BlogInfoMapper;
 import com.cya.springblogdemo.pojo.dataobject.BlogInfo;
+import com.cya.springblogdemo.pojo.dataobject.UserInfo;
 import com.cya.springblogdemo.pojo.request.AddBlogRequest;
 import com.cya.springblogdemo.pojo.request.UpdateBlogRequest;
 import com.cya.springblogdemo.pojo.response.BlogInfoResopnse;
@@ -39,6 +40,7 @@ public class BlogServiceImpl implements BlogService {
         QueryWrapper<BlogInfo> queryWrapper=new QueryWrapper<>();
         queryWrapper.lambda().eq(BlogInfo::getDeleteFlag, Constants.BLOG_NORMAL);
         List<BlogInfo> blogInfos = blogInfoMapper.selectList(queryWrapper);
+
 
         //将BlogInfo的数据化成BlogInfoResopnse格式
         List<BlogInfoResopnse> blogInfoResopnses = blogInfos.stream()
@@ -106,5 +108,13 @@ public class BlogServiceImpl implements BlogService {
             log.error("删除博客失败,e:",e);
             throw new BlogException("内部错误，请练习管理员");
         }
+    }
+
+    @Override
+    public Integer CountBlog() {
+        QueryWrapper<BlogInfo> queryWrapper=new QueryWrapper<>();
+        queryWrapper.lambda().eq(BlogInfo::getDeleteFlag,Constants.BLOG_NORMAL);
+        Integer integer = Math.toIntExact(blogInfoMapper.selectCount(queryWrapper));
+        return integer;
     }
 }

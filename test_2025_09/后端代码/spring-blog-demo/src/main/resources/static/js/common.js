@@ -25,3 +25,14 @@ function logout(){
     localStorage.removeItem("loginUserId");
     location.href="blog_Login.html";
 }
+function getBlogInfoCount(){
+    $.ajax({
+        type: "get",
+        url:"/blog/CountBlog",
+        success:function (result){
+            if (result!=null&&result.code=="SUCCESS"){
+                $(".row .blogCount").text(result.data)
+            }
+        }
+    })
+}

@@ -1,6 +1,7 @@
 package com.cya.springblogdemo.service;
 
 import com.cya.springblogdemo.pojo.request.UserLoginRequest;
+import com.cya.springblogdemo.pojo.request.UserRegisterRequest;
 import com.cya.springblogdemo.pojo.response.UserInfoResponse;
 import com.cya.springblogdemo.pojo.response.UserLoginResponse;
 
@@ -17,4 +18,6 @@ public interface UserService {
     UserInfoResponse getUserInfo(Integer userId);
 
     UserInfoResponse getAuthorInfo(Integer blogId);
+
+    boolean insertUserInfo(UserRegisterRequest userRegisterRequest);
 }

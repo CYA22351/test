@@ -33,7 +33,7 @@
                     <span>分类</span>
                 </div>
                 <div class="row">
-                    <span>2</span>
+                    <span class="blogCount"></span>
                     <span>1</span>
                 </div>
             </div>
@@ -65,6 +65,7 @@
         //var userUrl = "/user/getAuthorInfo" + location.search;
         //getUserInfo(userUrl);
         getBlogDetail();
+        getBlogInfoCount();
         var url="/user/getAuthorInfo"+location.search;
         getUserInfo(url);
 
