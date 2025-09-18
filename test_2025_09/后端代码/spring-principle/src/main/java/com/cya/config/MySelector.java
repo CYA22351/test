@@ -11,6 +11,8 @@ import org.springframework.core.type.AnnotationMetadata;
  * @version:
  */
 public class MySelector implements ImportSelector {
+
+
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         return new String[]{"com.cya.config.BiteConfig","com.cya.config.BiteConfig2"};
