@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: l论坛系统
+server:
+  port: 57070
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss
+  level:
+    root: info
+    com.cya.forumproject: debug
+  file:
+    path: D:/log/forum
+
