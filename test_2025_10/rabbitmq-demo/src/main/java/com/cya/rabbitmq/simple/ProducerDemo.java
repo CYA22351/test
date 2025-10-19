@@ -1,13 +1,10 @@
-package com.cya.rabbitmq;
+package com.cya.rabbitmq.simple;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.rmi.Naming;
-import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -33,8 +30,11 @@ public class ProducerDemo {
 //        声明队列
         channel.queueDeclare("hello",true,false,false,null);
 // 发送消息
-        String msg="hello rabbitma~";
-        channel.basicPublish("","hello",null,msg.getBytes());
+        for (int i=0;i<10;i++){
+            String msg="hello rabbitma~";
+            channel.basicPublish("","hello",null,msg.getBytes());
+        }
+
         channel.close();
         connection.close();
     }
