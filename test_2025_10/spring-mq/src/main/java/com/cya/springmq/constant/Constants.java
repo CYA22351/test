@@ -18,6 +18,17 @@ public static final String WORK_QUEUE="work_queue";
 public static final String FANOUT_QUEUE1="fanout_queue1";
     public static final String FANOUT_QUEUE2="fanout_queue2";
     public static final String FANOUT_EXCHANGE="fanout_exchange";
+//路由模式
+
+    public static final String DIRECT_QUEUE1="direct_queue1";
+    public static final String DIRECT_QUEUE2="direct_queue2";
+    public static final String DIRECT_EXCHANGE="dierct_exchange";
+//    通配符模式
+public static final String TOPIC_QUEUE1="topic_queue1";
+    public static final String TOPIC_QUEUE2="topic_queue2";
+    public static final String TOPIC_EXCHANGE="topic_exchange";
+
+
 
 
 }

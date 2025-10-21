@@ -4,6 +4,7 @@ import com.cya.springmq.constant.Constants;
 import jakarta.annotation.Resource;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,5 +35,15 @@ public class ProducerController {
     public String fanout(){
 rabbitTemplate.convertAndSend(Constants.FANOUT_EXCHANGE,"","hello spring amqp fanout...");
 return "发送成功";
+    }
+    @RequestMapping("/direct/{routingKey}")
+    public String direct(@PathVariable String routingKey){
+        rabbitTemplate.convertAndSend(Constants.DIRECT_EXCHANGE,routingKey,"hello spring amqp direct...");
+        return "发送成功";
+    }
+    @RequestMapping("/topic/{routingKey}")
+    public String topic(@PathVariable String routingKey){
+        rabbitTemplate.convertAndSend(Constants.TOPIC_EXCHANGE,routingKey,"hello spring amqp topic");
+        return "发送成功";
     }
 }
