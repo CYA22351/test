@@ -20,7 +20,7 @@ public class RabbitConfig {
 
     @Bean("orderQueue")
     public Queue orderQueue(){
-        return QueueBuilder.durable("order.create").build();
+        return QueueBuilder.durable("order.  ").build();
     }
 @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter(){
