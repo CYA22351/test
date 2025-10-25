@@ -19,4 +19,11 @@ public class Constants {
 //重试机制
     public static final String RETRY_QUEUE="retry_queue";
     public static final String RETRY_EXCHANGE="retry_exchange";
+
+//    延迟队列
+    public static final String DELAY_QUEUE="delay_queue";
+    public static final String DELAY_EXCHANGE="delay_sxchange";
+
+//    事务
+    public static final String TRANS_QUEUE="trans_queue";
 }

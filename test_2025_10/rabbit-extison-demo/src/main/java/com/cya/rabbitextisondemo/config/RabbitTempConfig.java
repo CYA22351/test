@@ -4,6 +4,7 @@ import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -47,4 +48,17 @@ public RabbitTemplate cconfirmrabbitTemplate(ConnectionFactory connectionFactory
             }
         });
         return rabbitTemplate;
-    }}
+    }
+
+    @Bean("transRabbitTemplate")
+    public RabbitTemplate transRabbitTemplate(ConnectionFactory connectionFactory){
+        RabbitTemplate rabbitTemplate=new RabbitTemplate(connectionFactory);
+        rabbitTemplate.setChannelTransacted(true);//开启事务
+        return rabbitTemplate;
+    }
+    @Bean
+    public RabbitTransactionManager rabbitTransactionManager(ConnectionFactory connectionFactory){
+        return new RabbitTransactionManager(connectionFactory);
+    }
+}
+
